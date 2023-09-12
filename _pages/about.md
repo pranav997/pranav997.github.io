@@ -5,7 +5,7 @@ permalink: /
 subtitle: MSc Physics student at <a href="https://www.ubc.ca">The University of British Columbia</a> and the <a href="https://qmi.ubc.ca">Stewart Blusson Quantum Matter Institute</a>.
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic.png
   image_circular: false # crops the image to make it circular
   # address: >
   #   <p>555 your office number</p>
@@ -18,7 +18,7 @@ profile:
 social: true  # includes social icons at the bottom of the page
 ---
 
-My research lies at the intersection of machine learning, quantum computing, and condensed matter physics under the supervision of [Roman Krems](https://groups.chem.ubc.ca/krems/). I also enjoy documenting my thoughts on various topics through my blog posts. 
+My research lies at the intersection of machine learning, quantum computing, and condensed matter physics. I am supervised by [Roman Krems](https://groups.chem.ubc.ca/krems/). I also enjoy documenting my thoughts on various topics through my blog posts. 
 
 Beyond academics, you can find me on a hike, playing cricket or spending quality time with friends and family.
 
