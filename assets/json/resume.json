@@ -1,18 +1,19 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Pranav Kairon",
+    "label": "Graduate Student",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
-    "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+    "email": "kaironp1@phas.ubc.ca",
+    "phone": "",
+    "url": "https://pranav997.github.io",
+    "summary": "Dedicated graduate student pursuing a Master's in Physics with expertise in machine learning, quantum computing, and condensed matter. I also love studying new concepts, which may or may not overlap with my current research goals",
+    // "location": {
+    //   "address": "2712 Broadway St",
+    //   "postalCode": "CA 94115",
+    //   "city": "San Francisco",
+    //   "countryCode": "US",
+    //   "region": "California"
+    // },
     },
     "profiles": [
       {
@@ -63,11 +64,11 @@
   "skills": [],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker"
+      "language": "French",
+      "fluency": "débutante"
     },
     {
-      "language": "English",
+      "language": "English, Hindi, Punjabi",
       "fluency": "Fluent"
     }
   ],

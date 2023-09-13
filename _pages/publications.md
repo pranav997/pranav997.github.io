@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
+title: Publications
 description: You can also access my <a href="https://scholar.google.com/citations?user=4D5oj3MAAAAJ&hl=en&oi=sra">Google Scholar</a>
 nav: true
 nav_order: 1
