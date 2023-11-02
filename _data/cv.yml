@@ -15,12 +15,15 @@
       institution: University of British Columbia, Vancouver, Canada
       year: 2021
       description:
-        - CGPA: 3.62/4.0
-        - Description 2.
-        - title: Bayesian extrapolation of observables in Hamiltonian parameter spaces: 
+        - CGPA 3.62/4.0
+        - Teaching Assistant PHYS 100 and 131.
+        - title: Bayesian extrapolation of observables in Hamiltonian parameter spaces
           contents:
             - I used Gaussian process regression to extrapolate polaron dispersion in different regimes and predict phase transition and extreme adiabatic regime polaron behavior. 
             - Sub-description 2.
+        - title: Bayesian extrapolation of observables in Hamiltonian parameter spaces
+          contents:
+            - *bold Equivalence between Barren Plateaus and exponential concentration* In this project, I derive conditional relations between Barren plateaus in quantum neural and exponential concentration in the quantum kernel, such that one can transfer the training bounds from former to latter. Moreover, I show how equivariant kernels tend to avoid exponential concentrations.
     - title: Federal teaching diploma
       institution: Delhi Technological University, Delhi, India
       year: 2017
