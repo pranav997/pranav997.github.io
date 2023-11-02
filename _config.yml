@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 
 title: Pranav Kairon # the website title (if blank, full name will be used instead)
-first_name: Pranavoooo 
+first_name: Pranav
 middle_name: 
 last_name: Kairon
 email: pranavkrn81@gmail.com
@@ -274,8 +274,8 @@ display_categories: ['blockquotes'] # these categories will be displayed on the 
 
 scholar:
 
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Kairon]
+  first_name: [Pranav]
 
   style: apa
   locale: en

@@ -15,15 +15,15 @@
       institution: University of British Columbia, Vancouver, Canada
       year: 2021
       description:
-        - Description 1.
+        - CGPA: 3.62/4.0
         - Description 2.
-        - title: Description 3.
+        - title: Bayesian extrapolation of observables in Hamiltonian parameter spaces: 
           contents:
-            - Sub-description 1.
+            - I used Gaussian process regression to extrapolate polaron dispersion in different regimes and predict phase transition and extreme adiabatic regime polaron behavior. 
             - Sub-description 2.
     - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
+      institution: Delhi Technological University, Delhi, India
+      year: 2017
       description:
         - Description 1.
         - Description 2.
