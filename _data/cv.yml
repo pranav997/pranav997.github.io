@@ -11,24 +11,28 @@
 - title: Education
   type: time_table
   contents:
-    - title: Masters
+    - title: Masters in Physics
       institution: University of British Columbia, Vancouver, Canada
       year: 2021
       description:
         - CGPA 3.62/4.0
         - Teaching Assistant PHYS 100 and 131.
-        - title: Bayesian extrapolation of observables in Hamiltonian parameter spaces
+        - title: <b> Bayesian extrapolation of observables in Hamiltonian parameter spaces <b>
           contents:
-            - I used Gaussian process regression to extrapolate polaron dispersion in different regimes and predict phase transition and extreme adiabatic regime polaron behavior. 
-            - Sub-description 2.
-        - title: Bayesian extrapolation of observables in Hamiltonian parameter spaces
+            - I used Gaussian process regression with kernel selection algorithm to extrapolate polaron dispersion relations in hamiltonian parameter space
+              such as phonon frequency, momentum, and coupling. Using Green's function cluster expansion for data acquisition in the adiabatic regime,
+              the model accurately predicted phase transitions at lower phonon frequencies and explored the extreme adiabatic regime of Peierls polaron
+              physics, addressing challenges in High Temperature superconductivity research.
+        - title: <b> Equivalence between Barren Plateaus and exponential concentration <b>
           contents:
-            - *bold Equivalence between Barren Plateaus and exponential concentration* In this project, I derive conditional relations between Barren plateaus in quantum neural and exponential concentration in the quantum kernel, such that one can transfer the training bounds from former to latter. Moreover, I show how equivariant kernels tend to avoid exponential concentrations.
-    - title: Federal teaching diploma
+            - In this project, I derive conditional relations between Barren plateaus in quantum neural and exponential concentration in the quantum kernel, 
+              such that one can transfer the training bounds from former to latter. Moreover, I show how equivariant kernels tend to avoid exponential 
+              concentrations.
+    - title: Bachelor of Technology in Engineering Physics
       institution: Delhi Technological University, Delhi, India
       year: 2017
       description:
-        - Description 1.
+        - CGPA 8.96/10.0
         - Description 2.
 
 - title: Experience
