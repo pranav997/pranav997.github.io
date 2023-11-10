@@ -11,7 +11,7 @@ bibliography: conical.bib
 
  The Jahn-Teller effect is a phenomenon in molecular and solid-state physics where distortions in the molecular geometry occur due to degenerate electronic states. The effect is often associated with the geometric aspects and the Berry phase. In the gauge formalism of Jahn-Teller models, we can visualize the introduction of a magnetic flux into the Conical Intersection (CI). This has led to discussions about a "molecular Aharonov-Bohm effect.
 
-In their work  <d-cite key="schon1995geometric"></d-cite> Schön and Köppel explored a scenario of 'self-interference.' They considered an initial Gaussian wave-packet located at the minima of the lower potential energy surface. As the wave-packet expands, it predominantly follows the minima's path. After a certain time, the initial wave-packet has propagated around the entire minimum and interferes with itself. This interference pattern captures the π-magnetic flux through the CI.
+In their work  <d-cite key="schon1995geometric"></d-cite> Schön and Köppel explored a scenario of 'self-interference.' They considered an initial Gaussian wave-packet located at the minima of the lower potential energy surface. As the wave-packet expands, it predominantly follows the minima's path. After a certain time, the initial wave-packet has propagated around the entire minimum and interferes with itself. This interference pattern captures the π-magnetic flux through the CI. 
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -23,11 +23,8 @@ In their work  <d-cite key="schon1995geometric"></d-cite> Schön and Köppel exp
 </div>
 
 One can reproduce this using the following code.
-<d-code block language="python">
-
-# Set seaborn style
-sns.set_style("darkgrid")
-sns.set_context("talk")
+{% raw %}
+```python
 
 c = 4
 w = 2  # 2*np.pi*f_Rabi
@@ -64,5 +61,6 @@ fig = plt.figure(figsize=(8, 8))
 
 anim=animation.FuncAnimation(fig, animate, init_func=init, frames=num_time_steps, repeat=False)
 HTML(anim.to_html5_video())
-</d-code>
+```
+{% endraw %}
 
