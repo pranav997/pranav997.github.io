@@ -1,7 +1,7 @@
 ---
 layout: distill
-title: Category theory
-description: Semantics for all the semantics
+title: Dequantization of quantum algorithms
+description: sometimes classical algorithms are better
 img: assets/img/lieb1.png
 importance: 2
 category: work
@@ -28,27 +28,17 @@ _styles: >
   }
 ---
 
-I had known about Lieb Robinson bounds previously because of the HHKL algorithm <d-cite key="haah2021quantum"></d-cite>. But I never thought of going into 
-depth, until I attended a talk by Prof. Mari Carmen Bañuls, where she talked about one of her papers titled "Light cone tensor network and time evolution" <d-cite key="mari_light"></d-cite> . This sort of reintroduced me to the idea, of how there are bounds on the speed with which information spreads in a quantum system. There are great reviews/notes available for a graduate level introduction to this topic <d-cite key="chen2023speed,hastings2010locality"></d-cite>. Andy Lucas does
-a nice job of summarizing it in this Boulder summer school [lecture](https://www.youtube.com/watch?v=2gktIZpPhSM). I have prepared some handwritten notes for the lecture
-in case people find them helpful [PDF](/assets/pdf/LB_Bounds.pdf).However, in this post I will talk about what I understand/find interesting about LB bound.
+Quantum machine learning is a rapidly growing field of research. The promise of quantum machine learning is that quantum computers can be used to speed up classical machine learning algorithms. However, it is not clear that quantum machine learning algorithms are always better than classical machine learning algorithms. A series of works that come
+under the category of dequantization of quantum algorithms show that the 
+apparent exponential speedup can be replicated in a classical setting
+provided we relax a few assumptions. In this post, we will discuss this in detail.
 
-So we consider a local Hamiltonian of the form $$\mathcal{H}=\sum h_x$$ defined on $$n$$ qubits. We have a Hilbert space with $$2^n$$ dimensions such that time evolution of an
-initial state $$|\psi(0)\rangle$$ is given by $$|\psi(t)\rangle=e^{-i\mathcal{H}t}|\psi(0)\rangle$$. We are interested in the spread of information in the system. The implementation of such unitaries on a quantum computer is considered efficient if, Unitary $$U$$ can be implemented in time $$t$$ with a number of gates $$g$$ such that $$g\leq poly(n)$$ and $$t\leq poly(n)$$. The trick is to decompose continuos time evolutions into discrete steps such that discrete steps commute, this is known as Trotterization.
+It's not straightforward to compare quantum and classical algorithms. The reason is that quantum algorithms take quantum states as inputs such 
+as $$ \ket{x} = \sum_{i=1}^n x_i \ket{i} $$ and classical algorithms take classical states as inputs such as $$ \vec{x} = (x_1, \ldots, x_n) $$. To compare the two, Ewin Twang proposed _sample and query access_ (SQ access) model. Concretely it is defined as follows:
 
-{% details Trotterization example %}
-Let's say we want to evolve a Hamiltonian given by $$\mathcal{H}=\sum_{i} J(X_{i}X_{i+1} + Y_{i}Y_{i+1}+ Z_{i}Z_{i+1})$$ for time $$t$$. We can decompose the time evolution into $$N$$ steps of size $$\delta t=t/N$$ where $$N$$ is the number of steps. We can write $$U=e^{-i\mathcal{H}t}$$ as $$U=[e^{-i\sum_{i}J\delta t(X_{i}X_{i+1})}e^{-i\sum_{i}J\delta t(Y_{i}Y_{i+1})}e^{-i\sum_{i}J\delta t(Z_{i}Z_{i+1})}]^N$$
+{% details SQ access definition %}
+SQ access is an oracle which enables querying a vector $$ x \in \mathbb{C}^n $$ such that:
+* The orcale outputs $$i \in \{1, \ldots, 2^n\}$$ with probability $$|x_i|^2$$ upon sampling.
+* The oracle outputs $$x_i$$ upon querying.
+* The oracle outputs $$||x||_2$$ upon querying N times.
 {% enddetails %}
-***
-## Simple example of a Lieb Robinson bound
-
-Consider a simpler example of a electron hopping on a tight binding lattice with
- nearest neighbour interactions, $$ \mathcal{H}=\sum_{n} J(|n\rangle \langle
- n+1|+|n+1\rangle \langle n|)$$. The dispersion relation is given by
- $$\epsilon_k=-2t\cos{ka} $$ where $$k$$ is the electron momentum. Hence, the
- maxmimum group velocity can be derived as $$v_g= \frac{dw}{dk} \leq 2ta $$. If
- we have a 1D lattice, then the maximum speed with which information can spread
- is $$2ta$$. An interesting question to ask is how does a perturbation at one
- site spread through the lattice. This can be measured by observing the difference between 
- the unperturbed time evolved state $$|\psi(t)\rangle=e^{-i\mathcal{H}t}|\psi(0)\rangle $$ with the perturbed state
- $$|\psi(t)\rangle=e^{-i\mathcal{H}t}e^{-iX_0}|\psi(0)\rangle $$.
