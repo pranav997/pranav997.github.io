@@ -85,7 +85,7 @@
 - title: Academic Interests
   type: list
   contents:
-    - <u>:</u>  Quantum information, topological quantum phenomena, condensed matter physics, non-equilibrium dynamics, tensor networks, machine learning, numerical quantum methods
+    - title: Quantum information, condensed matter physics, non-equilibrium dynamics, tensor networks, machine learning, numerical quantum methods
       # items: 
       #   - Description 1.
       #   - Description 2.

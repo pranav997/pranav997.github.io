@@ -40,31 +40,31 @@
   contents:
     - title: Mitacs Accelerate
       institution: Canada
-      year: 2023 - 2024
+      year: October 2023 - August 2024
       description:
         - Using quantum machine learning methods for feature selection in a biomedical dataset.
         - Wrote a grant proposal for 30k CAD.
     - title: Superconducting Circuit Design and Fabrication
       institution: Canada
-      year: 2022
+      year: June 2022 - July 2022
       description:
         - Hands-on experience in designing, simulating, and fabricating superconducting circuits.
         - Advanced testing of chips and skills in quantum devices.
     - title: Research Internship
       institution: HCL Technologies, Bengaluru, India
-      year: 2021 
+      year: August 2021 - September 2021
     - title: Research Internship
       institution: Conduit Computing, Boston, USA (Remote)
-      year: 2020 
+      year: March 2020 - January 2021
     - title: Research Internship
       institution: Qnu Labs, Bengaluru, India
-      year: 2019 
+      year: December 2019 - January 2020
     - title: Research Internship
       institution: Solid State Physics Laboratory - DRDO, Delhi, India
-      year: 2019 
+      year: May 2019 - August 2019
     - title: Research Internship
       institution: Laser Science and Technology Center – DRDO, Delhi, India
-      year: 2018 
+      year: May 2018 - August 2021
 
 - title: Honors and Awards
   type: time_table
@@ -74,28 +74,28 @@
         - Various honors and awards including Mitacs Accelerate Grant, IBM Error Correction Summer School, Commendable Research Award at DTU, QuEST Fellowship, NSERC Quantum Computing CREATE Scholarship, among others.
 
 
-# - title: Open Source Projects
-#   type: time_table
-#   contents:
-#     - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-#       year: 2015-now
-#       description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+- title: Open Source Projects
+  type: time_table
+  contents:
+    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
+      year: 2015-now
+      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
 
 
 - title: Academic Interests
-  type: list
+  type: nested_list
   contents:
-    - <u>:</u>  Quantum information, topological quantum phenomena, condensed matter physics, non-equilibrium dynamics, tensor networks, machine learning, numerical quantum methods
+    - title: Quantum information, condensed matter physics, non-equilibrium dynamics, tensor networks, machine learning, numerical quantum methods
       # items: 
       #   - Description 1.
       #   - Description 2.
-    # - title: Topic 2.
+    - title: Topic 2.
       # items:
       #   - Description 1.
       #   - Description 2.
 
-# - title: Other Interests
-#   type: list
-#   contents:
-#     - <u>Hobbies:</u> Cricket, Hiking, War History, Cooking
+- title: Other Interests
+  type: list
+  contents:
+    - <u>Hobbies:</u> Cricket, Hiking, War History, Cooking
 
