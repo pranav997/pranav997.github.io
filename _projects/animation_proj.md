@@ -19,7 +19,7 @@ author: Pranav
     Hypersonic flow around a disk
 </div>
 
-One can reproduce this using the following code.
+One can reproduce this using the following code. The original Mathematica implementation has been described [here](https://www.youtube.com/watch?v=2zOUZlHKKbs&t=559s).
 {% raw %}
 
 ```python
