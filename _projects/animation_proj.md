@@ -6,6 +6,7 @@ img: assets/img/conic1.jpeg
 importance: 2
 category: fun
 giscus_comments: true
+author: Pranav
 ---
 
 
