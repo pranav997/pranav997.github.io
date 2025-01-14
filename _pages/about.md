@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: MSc Physics student at <a href="https://www.ubc.ca">The University of British Columbia</a> and the <a href="https://qmi.ubc.ca">Stewart Blusson Quantum Matter Institute</a>.
+subtitle: PhD Physics student at University of Illinois Urbana Champaign in Bryan Clark's group
 profile:
   align: right
   image: prof_pic.png
@@ -18,7 +18,7 @@ profile:
 social: true  # includes social icons at the bottom of the page
 ---
 
-My research lies at the intersection of machine learning, quantum computing, and condensed matter physics. I am supervised by [Roman Krems](https://groups.chem.ubc.ca/krems/). I also enjoy documenting my thoughts on various topics through my blog posts. 
+My research lies at the intersection of machine learning, quantum computing, and condensed matter physics. Previously, I was an MSc Physics student at <a href="https://www.ubc.ca">The University of British Columbia</a> and the <a href="https://qmi.ubc.ca">Stewart Blusson Quantum Matter Institute</a>. At UBC I was supervised by [Roman Krems](https://groups.chem.ubc.ca/krems/). I also enjoy documenting my thoughts on various topics through my blog posts. 
 
 Beyond academics, you can find me on a hike, playing cricket or spending quality time with friends and family.
 
