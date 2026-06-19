@@ -1,0 +1,84 @@
+I"7)<p>The Jahn-Teller effect is a phenomenon in molecular and solid-state physics where distortions in the molecular geometry occur due to degenerate electronic states. The effect is often associated with the geometric aspects and the Berry phase. In the gauge formalism of Jahn-Teller models, we can visualize the introduction of a magnetic flux into the Conical Intersection (CI). This has led to discussions about a “molecular Aharonov-Bohm effect.</p>
+
+<p>In their work  <d-cite key="schon1995geometric"></d-cite> Schön and Köppel explored a scenario of ‘self-interference.’ They considered an initial Gaussian wave-packet located at the minima of the lower potential energy surface. As the wave-packet expands, it predominantly follows the minima’s path. After a certain time, the initial wave-packet has propagated around the entire minimum and interferes with itself. This interference pattern captures the π-magnetic flux through the CI.</p>
+
+<details><summary>Adiabatic vs Diabatic</summary>
+<p>Consider the full Schrödinger equation given by \(\hat{H}(r, R) \psi(r ; R) \chi(R)= &amp; \left(E^{\mathrm{el}}(R)+\hat{V}_{\mathrm{N}}\right) \psi(r ; R) \chi(R) \\
+    &amp; -\sum_{i} \frac{1}{2 M_{i}}\left[\psi(r ; R) \nabla_{\mathrm{N}, i}^{2} \chi(R)\right. \\
+    &amp; \left.+2 \nabla_{\mathrm{N}, i} \psi(r ; R) \cdot \nabla_{\mathrm{N}, i} \chi(R)+\nabla_{\mathrm{N}, i}^{2} \psi(r ; R) \chi(R)\right]\) and total wavefunction is given by
+\(\Psi(r,R)=\sum_{i} \psi_i(r;R)\chi_i(R)\) where \(\psi_i(r;R)\) is the electronic wavefunction and \(\chi_i(R)\) is the nuclear wavefunction. The terms that carry
+the derivative of electronic wavefunction wrt to the nuclear coordinates are called non-adiabatic coupling terms. The adiabatic/Born-Oppenheimer approximation is valid when the non-adiabatic coupling terms are small. But these terms can blow up when the electronic states cross. The electron dynamics timescale becomes equal to nuclear dynamics timescale
+and hence BO is no longer valid. In the adiabatic representation we choose an ansatz given by \(\Psi(r ; R)=\sum_{n=0}^{\infty} \psi_{n}(r ; R) \chi_{n}(R)\). Using this in
+the schrodinger equation we get off diagonal coupling terms. Hence, this representation is only useful when off diagonal couplings are small and can be neglected since
+calculating them is quite difficult.</p>
+</details>
+
+<p>Specifically, consider a two state diabatic Hamiltonian with a CI at the origin. The Hamiltonian is given by \(\hat{H}= \hat{T_{nuc}}\mathbf{\hat{I}} + \hat{V}\) where \(\hat{T_{nuc}}\) is the nuclear kinetic energy operator, \(\mathbf{\hat{I}}\) is the identity matrix, and \(\hat{V}\) is the potential energy operator. The potential energy operator is given by
+\(\hat{V} = \begin{pmatrix}
+\frac{1}{2}w^2((x+a/2)^2+y^2) &amp; c y \\
+c y &amp; \frac{1}{2}w^2((x-a/2)^2+y^2)
+\end{pmatrix}
++\)
+where \(w\) is the frequency of the harmonic oscillator and \(c\) is the coupling between the two states.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+<figure>
+
+  
+
+  <video src="/assets/video/111.mp4" class="img-fluid rounded z-depth-1" width="auto" height="auto" autoplay="" controls="" />
+
+  
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Gaussian wavepacket evolving and self interfering as it goes around a CI
+</div>
+
+<p>One can reproduce this using the following code.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">w</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># 2*np.pi*f_Rabi
+</span><span class="n">num_time_steps</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">pop</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">((</span><span class="n">num_time_steps</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">zeros</span><span class="p">(</span><span class="n">num_time_steps</span><span class="p">)</span>
+
+<span class="n">psi</span> <span class="o">=</span> <span class="n">pt</span><span class="p">.</span><span class="nc">Wavefunction</span><span class="p">([</span><span class="sh">"</span><span class="s">exp(-(x+1)**2-(y)**2)*exp(1j*2*x)</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">0</span><span class="sh">"</span><span class="p">],</span> <span class="n">number_of_grid_points</span><span class="o">=</span><span class="p">(</span><span class="mi">128</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">128</span><span class="o">*</span><span class="mi">3</span><span class="p">),</span> <span class="n">spatial_ext</span><span class="o">=</span><span class="p">[(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="p">[</span><span class="sh">"</span><span class="s">1/2*w**2*((x+1)**2 + y**2)</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">c*y</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">1/2*w**2*((x-1)**2 + y**2)</span><span class="sh">"</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">.</span><span class="n">amp</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">].</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">sns</span><span class="p">.</span><span class="nf">heatmap</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">jet</span><span class="sh">'</span><span class="p">,</span><span class="n">cbar</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">psi</span><span class="p">.</span><span class="nf">propagate</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">num_time_steps</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">delta_t</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">variables</span><span class="o">=</span><span class="p">{</span><span class="sh">'</span><span class="s">w</span><span class="sh">'</span><span class="p">:</span> <span class="n">w</span><span class="p">,</span> <span class="sh">'</span><span class="s">c</span><span class="sh">'</span><span class="p">:</span> <span class="n">c</span><span class="p">})</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="nf">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">.</span><span class="n">amp</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">].</span><span class="n">T</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="n">fig</span><span class="p">.</span><span class="nf">clear</span><span class="p">()</span>
+    <span class="n">sns</span><span class="p">.</span><span class="nf">heatmap</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="sh">'</span><span class="s">jet</span><span class="sh">'</span><span class="p">,</span><span class="n">cbar</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="c1">#remove ticks in seaborn plot
+</span>    <span class="n">plt</span><span class="p">.</span><span class="nf">xticks</span><span class="p">([])</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">yticks</span><span class="p">([])</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">ylabel</span><span class="p">(</span><span class="sh">'</span><span class="s">$Q_y$</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">xlabel</span><span class="p">(</span><span class="sh">'</span><span class="s">$Q_x$</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="sh">'</span><span class="s">Time evolution of the wavefunction</span><span class="sh">'</span><span class="p">)</span>
+    
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+
+<span class="n">anim</span><span class="o">=</span><span class="n">animation</span><span class="p">.</span><span class="nc">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">animate</span><span class="p">,</span> <span class="n">init_func</span><span class="o">=</span><span class="n">init</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">num_time_steps</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="nc">HTML</span><span class="p">(</span><span class="n">anim</span><span class="p">.</span><span class="nf">to_html5_video</span><span class="p">())</span>
+</code></pre></div></div>
+
+:ET

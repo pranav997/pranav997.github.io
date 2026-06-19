@@ -1,0 +1,13 @@
+I"Æ<p>A sample blog page that demonstrates the inclusion of Tweets/Timelines/etc.</p>
+
+<h1 id="tweet">Tweet</h1>
+<p>An example of displaying a tweet:</p>
+<div class="jekyll-twitter-plugin"><p>There was a 'Moved Permanently' error fetching URL: 'https://twitter.com/rubygems/status/518821243320287232'</p></div>
+
+<h1 id="timeline">Timeline</h1>
+<p>An example of pulling from a timeline:</p>
+<div class="jekyll-twitter-plugin"><p>There was a 'Moved Permanently' error fetching URL: 'https://twitter.com/jekyllrb'</p></div>
+
+<h1 id="additional-details">Additional Details</h1>
+<p>For more details on using the plugin visit: <a href="https://github.com/rob-murray/jekyll-twitter-plugin">jekyll-twitter-plugin</a></p>
+:ET
