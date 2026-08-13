@@ -3,19 +3,24 @@ layout: default
 ---
 
 <!-- about.html -->
-      <div class="post">
-        <header class="post-header">
-          <h1 class="post-title">
+      <div class="post about-page">
+        <section class="about-hero">
+          <div class="about-intro">
+            <p class="eyebrow">Quantum many-body physics · UIUC</p>
+            <h1 class="post-title">
             {% if site.title == "blank" -%}<span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title }}{%- endif %}
-          </h1>
-          <p class="desc">{{ page.subtitle }}</p>
-        </header>
-
-        <article>
+            </h1>
+            <p class="desc">{{ page.subtitle }}</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="{{ '/publications/' | relative_url }}">View publications <span>↗</span></a>
+              <a class="button button-secondary" href="{{ '/cv/' | relative_url }}">Curriculum vitae</a>
+            </div>
+          </div>
           {% if page.profile -%}
-          <div class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}">
+          <div class="profile hero-profile">
             {%- if page.profile.image %}
               {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+              {%- assign profile_alt = site.first_name | append: ' ' | append: site.last_name -%}
 
               {% if page.profile.image_circular %}
                 {%- assign profile_image_class = "img-fluid z-depth-1 rounded-circle" -%}
@@ -26,7 +31,7 @@ layout: default
               {% include figure.html
               path=profile_image_path
               class=profile_image_class
-              alt=page.profile.image
+              alt=profile_alt
               cache_bust=true -%}
             {% endif -%}
             {%- if page.profile.address %}
@@ -36,10 +41,23 @@ layout: default
             {%- endif %}
           </div>
           {%- endif %}
+        </section>
 
-          <div class="clearfix">
+        <article>
+
+          <div class="about-copy">
             {{ content }}
           </div>
+
+          <section class="research-focus" aria-labelledby="research-focus-title">
+            <p class="eyebrow">Research directions</p>
+            <h2 id="research-focus-title">Exploring the many-body frontier.</h2>
+            <div class="focus-grid">
+              <div><span>01</span><h3>Quantum matter</h3><p>Strongly correlated systems and the computational tools used to understand them.</p></div>
+              <div><span>02</span><h3>Quantum information</h3><p>Information, entanglement, and dynamics in complex quantum systems.</p></div>
+              <div><span>03</span><h3>Machine learning</h3><p>New learning-based approaches for difficult problems in quantum physics.</p></div>
+            </div>
+          </section>
 
           <!-- News -->
           {% if page.news and site.announcements.enabled -%}
