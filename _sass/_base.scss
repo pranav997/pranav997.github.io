@@ -170,7 +170,10 @@ blockquote {
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
-  opacity: 0.95;
+  opacity: 0.97;
+  padding-bottom: .85rem;
+  padding-top: .85rem;
+  backdrop-filter: blur(14px);
 }
 
 .navbar .dropdown-menu {
@@ -208,10 +211,31 @@ blockquote {
 
   .navbar-brand {
     color: var(--global-text-color);
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: -.02em;
+  }
+
+  .brand-mark {
+    align-items: center;
+    background: var(--global-theme-color);
+    border-radius: 50%;
+    color: var(--global-bg-color) !important;
+    display: inline-flex;
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 1.1rem;
+    height: 1.7rem;
+    justify-content: center;
+    margin-right: .45rem;
+    width: 1.7rem;
   }
 
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
+    font-size: .84rem;
+    font-weight: 500;
+    padding-left: .7rem;
+    padding-right: .7rem;
 
     &:hover {
       color: var(--global-hover-color);
@@ -220,7 +244,7 @@ blockquote {
 
   .navbar-nav .nav-item.active>.nav-link {
     background-color: inherit;
-    font-weight: bolder;
+    font-weight: 700;
     color: var(--global-theme-color);
 
     &:hover {
@@ -246,6 +270,17 @@ blockquote {
       }
     }
   }
+}
+
+/* Landing-page overrides are kept here so they win over the theme defaults. */
+.about-page .hero-profile {
+  float: none !important;
+  margin: 0;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .about-page .hero-profile { width: 100%; }
 }
 
 .navbar-toggler {
@@ -514,6 +549,17 @@ footer.sticky-bottom {
   }
 
   .card {
+    border: 1px solid var(--global-divider-color);
+    border-radius: .8rem;
+    box-shadow: none;
+    overflow: hidden;
+    transition: box-shadow .2s ease, transform .2s ease;
+
+    &:hover {
+      box-shadow: 7px 7px 0 rgba(18, 100, 102, .13);
+      transform: translate(-2px, -2px);
+    }
+
     img {
       width: 100%;
     }
@@ -536,12 +582,16 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-divider-color);
+    color: var(--global-text-color);
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    text-align: right;
+    font-family: 'DM Mono', monospace;
+    font-size: .78rem;
+    letter-spacing: .09em;
+    text-align: left;
+    text-transform: uppercase;
   }
 }
 
