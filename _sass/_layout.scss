@@ -6,6 +6,11 @@ body {
   padding-bottom: 70px;
   color: var(--global-text-color);
   background-color: var(--global-bg-color);
+  background-image: url("/assets/img/growing-dying-graph.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   font-family: 'DM Sans', sans-serif;
   font-size: 1.05rem;
   line-height: 1.7;
@@ -18,6 +23,15 @@ body {
   h6 {
     scroll-margin-top: 66px;
   }
+}
+
+// The GIF was rendered for the light palette; keep dark mode's darker surface legible.
+html[data-theme='dark'] body {
+  background-image: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { background-image: none; }
 }
 
 body.fixed-top-nav {
